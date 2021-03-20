@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tierd Pricing</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">    <style>
+      *{
+        padding:0;
+        margin:0;
+        box-sizing:border-box;
+        font-family: 'Work Sans', sans-serif;
+        color:#042c69;
+        caret-color:#042c69;
+        
+      }
+      body{
+        background-color:#e8f8f0;
+      }
+      form{
+        margin: 0 auto;
+        margin-top:5%;
+        width:90%;
+        overflow-x:auto
+      }
+      input{
+        border:none;
+        border-bottom:2px solid;
+        outline:none;
+        font-size:1.15em;
+        max-width:100px;
+        background-color:transparent;
+      }
+
+      input:focus{
+   
+        border-bottom:2px solid #bbe4d0;
+  
+      }
+
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #bbe4d0;
+  text-align: left;
+  padding: 8px;
+  
+}
+th{
+  text-align:center;
+}
+
+#basePrice{
+  font-size:2em;
+}
+.base{
+
+  font-size:2em;
+
+}
+
+#calculate{
+ float:right;
+ margin-top:25px;
+ background:none;
+ padding:5px;
+ border:2px solid #042c69;;
+ font-size:2em;
+ cursor:pointer;
+}
+
+#calculate:hover{
+  color:#e8f8f0;
+  background:#042c69;;
+}
+.basePriceDiv{
+  margin-bottom:70px;
+}
+
+</style>
+</head>
+<body>
+
+<form>
+  <div class="basePriceDiv">
+  <label class="base" for="basePrice">Base Price $</label>
+  <input id="basePrice" type="text" name="basePrice"></input>
+  </div>
+
+  <table>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>Tier Difference $<input id="tierDiff" type="text"></input></td>
+          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
+          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
+          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
+          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
+        </tr>
+    <tr>
+      <th>Tier Pricing</th>
+      <th>MOQ</th>
+      <th>USD</th>
+      <th>SINGAPORE</th>
+      <th>JAPAN</th>
+      <th>BEJING</th>
+      <th>UNITED KINGDOM</th>
+    </tr>
+    <tr>
+      <td>Pricing 1</td>
+      <td><input type="text"></input></td>
+      <td id="USD1"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pricing 2</td>
+      <td><input type="text"></input></td>
+      <td id="USD2"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pricing 3</td>
+      <td><input type="text"></input></td>
+      <td id="USD3"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Pricing 4</td>
+      <td><input type="text"></input></td>
+      <td id="USD4"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+ 
+
+    
+  </table>
+<button id="calculate">Calculate</button>
+</form>
+
+<script src="main.js"></script>
+</body>
+</html>
