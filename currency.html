@@ -1,174 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tierd Pricing</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">    <style>
-      *{
-        padding:0;
-        margin:0;
-        box-sizing:border-box;
-        font-family: 'Work Sans', sans-serif;
-        color:#042c69;
-        caret-color:#042c69;
-      }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tierd Pricing</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Work Sans', sans-serif;
+      color: #042c69;
+      caret-color: #042c69;
+    }
 
-      body{
-        background-color:#e8f8f0;
-      }
-      form{
-        
-        margin: 0 auto;
-        margin-top:5%;
-        width:90%;
-        overflow-x:auto
-      }
-      input{
-        border:none;
-        border-bottom:2px solid;
-        outline:none;
-        font-size:1.15em;
-        max-width:100px;
-        background-color:transparent;
-      }
+    body {
+      background-color: #e8f8f0;
+    }
 
-      input:focus{
-   
-        border-bottom:2px solid #bbe4d0;
-  
-      }
+    form {
+      width: 90%;
+      overflow-x: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid;
+      outline: none;
+      font-size: 1.15em;
+      max-width: 100px;
+      background-color: transparent;
+    }
+
+    input:focus {
+
+      border-bottom: 2px solid #bbe4d0;
+
+    }
 
     table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-}
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+    }
 
-td, th {
-  border: 1px solid #bbe4d0;
-  text-align: center;
-  padding: 8px;
-  
-}
-th{
-  text-align:center;
-}
+    td,
+    th {
+      border: 1px solid #bbe4d0;
+      text-align: center;
+      padding: 8px;
 
-#basePrice{
-  font-size:2em;
-}
-.base{
+    }
 
-  font-size:2em;
+    th {
+      text-align: center;
+    }
 
-}
+    #basePrice {
+      font-size: 2em;
+    }
 
-#calculate{
- float:right;
- margin-top:25px;
- background:none;
- padding:5px;
- border:2px solid #042c69;;
- font-size:2em;
- cursor:pointer;
-}
+    .base {
 
-#calculate:hover{
-  color:#e8f8f0;
-  background:#042c69;;
-}
-.basePriceDiv{
-  margin-bottom:70px;
-}
+      font-size: 2em;
+
+    }
+
+    #calculate {
+      float: right;
+      margin-top: 25px;
+      background: none;
+      padding: 5px;
+      border: 2px solid #042c69;
+      ;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+    #calculate:hover {
+      color: #e8f8f0;
+      background: #042c69;
+      ;
+    }
+
+    .basePriceDiv {
+      margin-bottom: 70px;
+    }
 
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+    /* Firefox */
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
 
-</style>
+
+    .highlight {
+      background-color: #d6f2e4;
+    }
+  </style>
 </head>
+
 <body>
 
-<form>
-  <div class="basePriceDiv">
-  <label class="base" for="basePrice">Base Price $</label>
-  <input id="basePrice" type="number" name="basePrice" autocomplete="off"></input>
-  </div>
+  <form>
+    <div class="basePriceDiv">
+      <label class="base" for="basePrice">Base Price $</label>
+      <input id="basePrice" type="number" name="basePrice" autocomplete="off"></input>
+    </div>
 
-  <table>
+    <table>
       <tr>
-          <td></td>
-          <td></td>
-          <td>Tier Difference $<input id="tierDiff" type="number" autocomplete="off"></input></td>
-          <td>Landed Cost Diff. in USD $<input id="SGD" type="number" autocomplete="off"></input></td>
-          <td>Landed Cost Diff. in USD $<input id="JPY" type="number" autocomplete="off"></input></td>
-          <td>Landed Cost Diff. in USD $<input id="CNY" type="number" autocomplete="off"></input></td>
-          <td>Landed Cost Diff. in USD $<input id="GBP" type="number"autocomplete="off"></input></td>
-        </tr>
-    <tr>
-      <th>Tier Pricing</th>
-      <th>MOQ</th>
-      <th>USD</th>
-      <th>SINGAPORE</th>
-      <th>JAPAN</th>
-      <th>BEJING</th>
-      <th>UNITED KINGDOM</th>
-    </tr>
-    <tr>
-      <td>Pricing 1</td>
-      <td><input type="number" autocomplete="off"></input></td>
-      <td class="USD"></td>
-      <td class="SGD1"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Pricing 2</td>
-      <td><input type="number" autocomplete="off"></input></td>
-      <td class="USD1"></td>
-      <td class="SGD1"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Pricing 3</td>
-      <td><input type="number" autocomplete="off"></input></td>
-      <td class="USD1"></td>
-      <td class="SGD1"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Pricing 4</td>
-      <td><input type="number" autocomplete="off"></input></td>
-      <td class="USD1"></td>
-      <td class="SGD1"></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
- 
+        <td></td>
+        <td></td>
+        <td class="highlight">Tier Difference $<input id="tierDiff" type="number" autocomplete="off"></input></td>
+        <td>Landed Cost Diff. in USD $<input id="SGD" type="number" autocomplete="off"></input></td>
+        <td>Landed Cost Diff. in USD $<input id="JPY" type="number" autocomplete="off"></input></td>
+        <td>Landed Cost Diff. in USD $<input id="CNY" type="number" autocomplete="off"></input></td>
+        <td>Landed Cost Diff. in USD $<input id="GBP" type="number" autocomplete="off"></input></td>
+      </tr>
+      <tr>
+        <th>Tier Pricing</th>
+        <th>MOQ</th>
+        <th class="highlight">&#36; USD</th>
+        <th>&#36; SINGAPORE</th>
+        <th>&#165; JAPAN</th>
+        <th>&#165; BEIJING</th>
+        <th>&#163; UNITED KINGDOM</th>
+      </tr>
+      <tr>
+        <td>Pricing 1</td>
+        <td><input type="text" autocomplete="off"></input></td>
+        <td class="USD highlight"></td>
+        <td class="SGD1"></td>
+        <td class="JPY1"></td>
+        <td class="CNY1"></td>
+        <td class="GBP1"></td>
+      </tr>
+      <tr>
+        <td>Pricing 2</td>
+        <td><input type="text" autocomplete="off"></input></td>
+        <td class="USD1 highlight"></td>
+        <td class="SGD1"></td>
+        <td class="JPY1"></td>
+        <td class="CNY1"></td>
+        <td class="GBP1"></td>
+      </tr>
+      <tr>
+        <td>Pricing 3</td>
+        <td><input type="text" autocomplete="off"></input></td>
+        <td class="USD1 highlight"></td>
+        <td class="SGD1"></td>
+        <td class="JPY1"></td>
+        <td class="CNY1"></td>
+        <td class="GBP1"></td>
+      </tr>
+      <tr>
+        <td>Pricing 4</td>
+        <td><input type="text" autocomplete="off"></input></td>
+        <td class="USD1 highlight"></td>
+        <td class="SGD1"></td>
+        <td class="JPY1"></td>
+        <td class="CNY1"></td>
+        <td class="GBP1"></td>
+      </tr>
 
-    
-  </table>
-<button id="calculate">Calculate</button>
-</form>
+    </table>
+    <button id="calculate">Calculate</button>
+  </form>
 
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>

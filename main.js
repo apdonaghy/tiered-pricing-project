@@ -2,56 +2,32 @@ let basePrice = document.getElementById('basePrice')
 let tierDiff = document.getElementById('tierDiff')
 const calculateBtn = document.getElementById('calculate')
 let tierPrices = [];
+let countryCode = ['SGD', 'JPY', 'CNY', 'GBP']
 
+function runExchange(apidata) {
 
-function runExchange(apidata){
+    for (let abv of countryCode) {
 
-    console.log(apidata['rates'])
-    const landed = document.getElementById('SGD')
+        const landed = document.getElementById(abv)
 
-   
-    if(landed.value === ''){
-        // let noLanded = tierPrices[0]
-        // let apiRate = parseFloat(noLanded * apidata['rates']['SGD']).toFixed(2)
-        // console.log(apiRate)
-           let sgdDOM = document.querySelectorAll('.SGD1')
-           let item = 0;
-       
-   
-            for(let tier of tierPrices){
-                for(let singleSGD of sgdDOM){
-                    item = tier 
+        let sgdDOM = document.querySelectorAll(`.${abv}1`)
 
-                    singleSGD.innerText = item * parseFloat(apidata['rates']['SGD']).toFixed(2)
-                   
-               }
-              
-              
+        let increment = 0;
+
+        for (let singleDOM of sgdDOM) {
+            if (landed.value === '') {
+                singleDOM.innerText = parseFloat(tierPrices[increment] * apidata['rates'][abv]).toFixed(2)
+                increment++
+
+            } else {
+                let newLanded = parseFloat(landed.value) + tierPrices[increment]
+                singleDOM.innerText = `($${newLanded.toFixed(2)}) ${parseFloat(newLanded * apidata['rates'][abv]).toFixed(2)}`
+                increment++
+  
             }
-         
-     
-           
-            
-   
- 
-    }else{
-       let newlanded =  parseFloat(landed.value) + tierPrices[0]
-       let apiRate = parseFloat(newlanded * apidata['rates']['SGD']).toFixed(2)
-       console.log(apiRate)
+        }
     }
-
- 
-
-    // let usPrice = document.querySelectorAll('.USD1')
-    // let value = parseFloat(basePrice.value);
-    // for(let individualPrice of usPrice){
-    //     value -= parseFloat(tierVal);
-    //     tierPrices.push(parseFloat(value.toFixed(2)))
-    //     individualPrice.innerText = value.toFixed(2);
-    // }
-
 }
-
 
 function calculateDiff(tierVal) {
 
@@ -61,34 +37,31 @@ function calculateDiff(tierVal) {
 
     let usPrice = document.querySelectorAll('.USD1')
     let value = parseFloat(basePrice.value);
-    for(let individualPrice of usPrice){
+    for (let individualPrice of usPrice) {
         value -= parseFloat(tierVal);
-        tierPrices.push(parseFloat(value.toFixed(2)))
+        tierPrices.push(parseFloat(value))
         individualPrice.innerText = value.toFixed(2);
     }
- 
+
     console.log(tierPrices)
 
-    
+
     fetch('https://api.exchangeratesapi.io/latest?base=USD')
-    .then(response => response.json())
-    .then(data =>  runExchange(data));
+        .then(response => response.json())
+        .then(data => runExchange(data));
 
 }
 
-const makeCalculation = function (price, tier) {
-    console.log(price.value)
-    console.log(tier.value)
-
+const makeCalculation = function (tier) {
+   
+    tierPrices = [];
     calculateDiff(tier.value)
 
 }
 
 const triggerCalculationFunction = function (e) {
     e.preventDefault()
-    makeCalculation(basePrice, tierDiff)
+    makeCalculation(tierDiff)
 }
 
-
 calculateBtn.addEventListener('click', triggerCalculationFunction)
-
