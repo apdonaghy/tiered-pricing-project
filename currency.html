@@ -15,12 +15,13 @@
         font-family: 'Work Sans', sans-serif;
         color:#042c69;
         caret-color:#042c69;
-        
       }
+
       body{
         background-color:#e8f8f0;
       }
       form{
+        
         margin: 0 auto;
         margin-top:5%;
         width:90%;
@@ -48,7 +49,7 @@
 
 td, th {
   border: 1px solid #bbe4d0;
-  text-align: left;
+  text-align: center;
   padding: 8px;
   
 }
@@ -83,6 +84,19 @@ th{
   margin-bottom:70px;
 }
 
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 </style>
 </head>
 <body>
@@ -90,18 +104,18 @@ th{
 <form>
   <div class="basePriceDiv">
   <label class="base" for="basePrice">Base Price $</label>
-  <input id="basePrice" type="text" name="basePrice"></input>
+  <input id="basePrice" type="number" name="basePrice" autocomplete="off"></input>
   </div>
 
   <table>
       <tr>
           <td></td>
           <td></td>
-          <td>Tier Difference $<input id="tierDiff" type="text"></input></td>
-          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
-          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
-          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
-          <td>Landed Cost Diff. in USD $<input type="text"></input></td>
+          <td>Tier Difference $<input id="tierDiff" type="number" autocomplete="off"></input></td>
+          <td>Landed Cost Diff. in USD $<input id="SGD" type="number" autocomplete="off"></input></td>
+          <td>Landed Cost Diff. in USD $<input id="JPY" type="number" autocomplete="off"></input></td>
+          <td>Landed Cost Diff. in USD $<input id="CNY" type="number" autocomplete="off"></input></td>
+          <td>Landed Cost Diff. in USD $<input id="GBP" type="number"autocomplete="off"></input></td>
         </tr>
     <tr>
       <th>Tier Pricing</th>
@@ -114,36 +128,36 @@ th{
     </tr>
     <tr>
       <td>Pricing 1</td>
-      <td><input type="text"></input></td>
-      <td id="USD1"></td>
-      <td></td>
+      <td><input type="number" autocomplete="off"></input></td>
+      <td class="USD"></td>
+      <td class="SGD1"></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Pricing 2</td>
-      <td><input type="text"></input></td>
-      <td id="USD2"></td>
-      <td></td>
+      <td><input type="number" autocomplete="off"></input></td>
+      <td class="USD1"></td>
+      <td class="SGD1"></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Pricing 3</td>
-      <td><input type="text"></input></td>
-      <td id="USD3"></td>
-      <td></td>
+      <td><input type="number" autocomplete="off"></input></td>
+      <td class="USD1"></td>
+      <td class="SGD1"></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
       <td>Pricing 4</td>
-      <td><input type="text"></input></td>
-      <td id="USD4"></td>
-      <td></td>
+      <td><input type="number" autocomplete="off"></input></td>
+      <td class="USD1"></td>
+      <td class="SGD1"></td>
       <td></td>
       <td></td>
       <td></td>
