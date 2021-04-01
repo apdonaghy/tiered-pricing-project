@@ -46,7 +46,7 @@ function calculateDiff(tierVal) {
     console.log(tierPrices)
 
 
-    fetch('https://api.exchangeratesapi.io/latest?base=USD')
+    fetch('https://currencyapi.net/api/v1/rates?key=TNuW1JbyiSZ1UMy5pNFLLanDPYIod7csVNOv&base=USD')
         .then(response => response.json())
         .then(data => runExchange(data));
 

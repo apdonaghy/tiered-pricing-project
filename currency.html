@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +17,13 @@
       color: #042c69;
       caret-color: #042c69;
     }
-
     ::selection {
       color: #e8f8f0;
     background-color:#042c69;;
     }
-
     body {
       background-color: #e8f8f0;
     }
-
     form {
       width: 90%;
       overflow-x: auto;
@@ -36,7 +32,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-
     input {
       border: none;
       border-bottom: 2px solid;
@@ -45,40 +40,28 @@
       max-width: 100px;
       background-color: transparent;
     }
-
     input:focus {
-
       border-bottom: 2px solid #bbe4d0;
-
     }
-
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
     }
-
     td,
     th {
       border: 1px solid #bbe4d0;
       text-align: center;
       padding: 8px;
-
     }
-
     th {
       text-align: center;
     }
-
     #basePrice {
       font-size: 2em;
     }
-
     .base {
-
       font-size: 2em;
-
     }
-
     #calculate {
       float: right;
       margin-top: 25px;
@@ -89,45 +72,35 @@
       font-size: 2em;
       cursor: pointer;
     }
-
     #calculate:hover {
       color: #e8f8f0;
       background: #042c69;
       ;
     }
-
     .basePriceDiv {
       margin-bottom: 70px;
     }
-
-
     /* Chrome, Safari, Edge, Opera */
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
-
     /* Firefox */
     input[type=number] {
       -moz-appearance: textfield;
     }
-
-
     .highlight {
       background-color: #d6f2e4;
     }
   </style>
 </head>
-
 <body>
-
   <form>
     <div class="basePriceDiv">
       <label class="base" for="basePrice">Base Price $</label>
       <input id="basePrice" type="number" name="basePrice" autocomplete="off"></input>
     </div>
-
     <table>
       <tr>
         <td></td>
@@ -183,12 +156,9 @@
         <td class="CNY1"></td>
         <td class="GBP1"></td>
       </tr>
-
     </table>
     <button id="calculate">Calculate</button>
   </form>
-
   <script src="main.js"></script>
 </body>
-
 </html>
